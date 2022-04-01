@@ -1,0 +1,29 @@
+package ejemploHilos;
+
+public class Primo extends Thread {
+	
+	private int numero;
+	
+	public Primo(int numero) {
+		this.numero = numero;
+	}
+	/** Método que muestra si el numero que ha introducido el usuario por pantalla, 
+	 *	y mostrará si es primo o no. 
+	 */
+	public synchronized void run() {
+		boolean primo = true;
+	    //Comprobamos que sea distinto de 2 (el único primo par, y si es par el número introducido)
+	    if (this.numero != 2 && this.numero%2==0) {
+	    	primo = false;
+	    }
+	    //Si no comprobamos los impares (saltamos de 2 en dos)
+	    for(int i=3;i<this.numero;i+=2) {
+	        if(this.numero%i==0) {}
+	        	primo = false;
+	    }
+	    if (prime)
+	        View.input("The number is prime.");
+	    else
+	        View.input("The number isn't prime.");
+	}
+}

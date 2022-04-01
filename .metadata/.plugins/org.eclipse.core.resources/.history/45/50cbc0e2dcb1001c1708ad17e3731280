@@ -1,0 +1,25 @@
+package ejemploHilos;
+import java.util.Scanner;
+
+public class mainPrimo  {
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		
+		Primo hilo1 = new Primo();
+		Primo hilo2 = new Primo();
+		
+		Primo hilo3 = new Primo();
+		hilo3.setNumero(2);
+		
+		System.out.println("Introduzca un numero para comprobar si es primo:");
+		int n = sc.nextInt();
+		hilo1.setNumero(n);
+		System.out.println("Introduzca otro numero para comprobar si es primo:");
+		n = sc.nextInt();
+		hilo2.setNumero(13);
+		hilo1.start();		
+		hilo2.start();
+		hilo3.start();
+	}
+	
+}

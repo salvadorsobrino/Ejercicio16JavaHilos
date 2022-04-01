@@ -1,0 +1,39 @@
+package ejemploHilos;
+
+public class Primo extends Thread {
+
+	private int numero;
+
+	public Primo(i) {
+	}
+
+	/**
+	 * Método que muestra si el numero que ha introducido el usuario por pantalla, y
+	 * mostrará si es primo o no.
+	 */
+	public synchronized void run() {
+		boolean primo = true;
+
+		if (this.numero != 2 && this.numero % 2 == 0) {
+			// Comprobamos que sea distinto de 2 (el único primo par, y si es par el número
+			// introducido)
+			primo = false;
+		} else {
+			// Comprobamos a continuacion si el numero introducido es divisible solo entre
+			// si mismo y la unidad
+			for (int i = 3; i < this.numero; i++) {
+				if (this.numero % i == 0) {
+					primo = false;
+				}
+
+			}
+
+		}
+		if (primo) {
+			System.out.println("El numero " + this.numero + " es Primo");
+		} else {
+			System.out.println("El numero " + this.numero + " NO es Primo");
+		}
+
+	}
+}

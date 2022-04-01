@@ -1,0 +1,18 @@
+package ejemploHilos;
+import java.util.Scanner;
+
+public class mainPrimo  {
+	public static void main(String[] args) {
+		Primo hilo1 = new Primo();
+		hilo1.setNumero(3);
+		Primo hilo2 = new Primo();
+		hilo2.setNumero(13);
+		Primo hilo3 = new Primo();
+	
+		hilo3.setNumero(2);
+		hilo1.start();		
+		hilo2.start();
+		hilo3.start();
+	}
+	
+}
